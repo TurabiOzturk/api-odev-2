@@ -1,16 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 let userId = urlParams.get("userId");
 
-
-
-
 function validateUserId(userId) {
-  if (
-    userId === null ||
-    userId === undefined ||
-    userId.length <= 0 ||
-    userId.trim() === ""
-  ) {
+  if ((userId ?? "") === "" || userId.trim() === "") {
     alert("Lütfen bir değer giriniz");
     userId = prompt("Lütfen bir ID giriniz");
     return validateUserId(userId);
